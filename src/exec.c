@@ -28,8 +28,7 @@ void Exec(char **command, int numCommands)
 		command[numCommands-1] = NULL;
 		bgp = 1;
 	}
-	// if(strcmp(command[numCommands],"|")==0)
-	command[numCommands]=NULL;
+
 	int status;
 
 	pid_t pid=fork();

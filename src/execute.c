@@ -20,7 +20,7 @@
 void execute(char ** command,int numCommands){
 	char cwd[1024];
 	int i;
-	if(strcmp(strcmp(command[0],"quit")==0){
+	if(strcmp(command[0],"quit")==0){
 		exit(0);
 	}
 	else if(strcmp(command[0],"echo")==0){
@@ -70,6 +70,22 @@ void execute(char ** command,int numCommands){
 		}
 		else
 			list(command,numCommands);
+	}
+	else if(strcmp(command[0],"setenv")==0){
+		if(numCommands!=3){
+			perror("Error: ");
+		}
+		else{
+			setenv(command[1], command[2], 1);
+		}
+	}
+	else if(strcmp(command[0],"unsetenv")==0){
+		if(numCommands!=2){
+			perror("Error: ");
+		}
+		else{
+			unsetenv(command[1]);
+		}
 	}
 	else if(strcmp(command[0],"jobs")==0){
 		jobs(command, numCommands);
