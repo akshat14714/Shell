@@ -27,7 +27,7 @@ void execute(char ** command,int numCommands){
 		echo(command,numCommands);
 	}
 	else if(strcmp(command[0],"pwd")==0){
-        pwd();
+		pwd();
 	}
 	else if(strcmp(command[0],"pinfo")==0){
 		pinfo(command);

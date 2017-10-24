@@ -23,8 +23,6 @@ char *bg_processes[32768];
 
 void printPrompt();
 
-int get_job_pid (int jobid);
-
 void pinfo(char ** command);
 
 void changeDir(char ** command);
@@ -42,6 +40,8 @@ void echo(char ** command,int numCommands);
 void sigint_handler (int sig);
 
 void redirect(char ** command,int numCommands);
+
+int execute_with_pipes (char ** command, int input_pipe,int fl,int l,int r);
 
 void jobs(char ** command,int numCommands);
 
