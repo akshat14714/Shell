@@ -27,7 +27,7 @@ void execute(char ** command,int numCommands){
 		echo(command,numCommands);
 	}
 	else if(strcmp(command[0],"pwd")==0){
-		pwd();
+        pwd();
 	}
 	else if(strcmp(command[0],"pinfo")==0){
 		pinfo(command);
@@ -70,22 +70,6 @@ void execute(char ** command,int numCommands){
 		}
 		else
 			list(command,numCommands);
-	}
-	else if(strcmp(command[0],"setenv")==0){
-		if(numCommands!=3){
-			perror("Error: ");
-		}
-		else{
-			setenv(command[1], command[2], 1);
-		}
-	}
-	else if(strcmp(command[0],"unsetenv")==0){
-		if(numCommands!=2){
-			perror("Error: ");
-		}
-		else{
-			unsetenv(command[1]);
-		}
 	}
 	else if(strcmp(command[0],"jobs")==0){
 		jobs(command, numCommands);

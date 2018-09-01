@@ -9,6 +9,7 @@ shell: \
 			pwd.o \
 			echo.o \
 			redirect.o \
+			execute_with_pipes.o \
 			jobs.o \
 			get_job_pid.o \
 			fg.o \
@@ -44,9 +45,11 @@ pwd.o: shell.h src/pwd.c
 
 echo.o: shell.h src/cd.c
 	$(CC) -g -c src/echo.c
-
 redirect.o: shell.h src/redirect.c
 	$(CC) -g -c src/redirect.c
+
+execute_with_pipes.o: shell.h src/execute_with_pipes.c
+	$(CC) -g -c src/execute_with_pipes.c
 
 jobs.o: shell.h src/jobs.c
 	$(CC) -g -c src/jobs.c
